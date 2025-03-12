@@ -1,0 +1,14 @@
+{
+  "name": "npc_gen_v1.0",
+  "version": "1.0.0",
+  "description": "an NPC Generator",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kane Mobley",
+  "license": "ISC",
+  "pkg": {
+      "assets": ["functions/**/*", "config/*.json"]
+    }
+}

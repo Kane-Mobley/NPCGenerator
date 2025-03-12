@@ -1,0 +1,12 @@
+{
+    "races": [
+        { "name": "Human", "id": 0, "source": "PHB", "minAge": 18, "maxAge": 90 },
+        { "name": "Elf", "id": 1, "source": "PHB", "minAge": 100, "maxAge": 750 },
+        { "name": "Dwarf", "id": 2, "source": "PHB", "minAge": 18, "maxAge": 350 },
+        { "name": "Halfling", "id": 3, "source": "PHB", "minAge": 20, "maxAge": 250 },
+        { "name": "Dragonborn", "id": 4, "source": "PHB", "minAge": 15, "maxAge": 80 },
+        { "name": "Gnome", "id": 5, "source": "PHB", "minAge": 20, "maxAge": 400 },
+        { "name": "HalfOrc", "id": 6, "source": "PHB", "minAge": 14, "maxAge": 75 },
+        { "name": "Tiefling", "id": 7, "source": "PHB", "minAge": 18, "maxAge": 100 }
+    ]
+}
