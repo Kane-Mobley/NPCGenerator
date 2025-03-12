@@ -40,8 +40,11 @@
       "Plasterer",
       "Roofer",
       "Stonemason",
-      "Streetlayer",
-      "ARTS, The",
+      "Streetlayer"
+    ]
+  },
+  "THE_ARTS": {
+    "jobs": [
       "Acrobat",
       "Actor",
       "Chef",
