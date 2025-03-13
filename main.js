@@ -1,20 +1,16 @@
 const { NPC } = require("./functions/createNPC");
 const { randomRace } = require("./functions/randomRace");
 const { randomAge } = require("./functions/randomAge");
-const { randomSex } = require("./functions/randomSex");
+const { randomSex } = require("./functions/randomSexes");
 const { randomOccupation } = require("./functions/randomOccupation");
 const { randomNames } = require("./functions/randomNames");
+const { getFormattedDate } = require('./functions/getFormattedDate')
 const readline = require("node:readline");
 const fs = require("fs");
-const date = new Date();
-let dateYear = String(date.getFullYear());
-let dateMonth = String(date.getMonth());
-let dateDay = String(date.getDate());
-let dateHour = String(date.getHours());
-let dateMin = String(date.getMinutes());
-let dateSec = String(date.getSeconds());
-let formattedDate = (dateYear+dateMonth +  dateDay + "-" + dateHour + dateMin + dateSec)
-fileName = "NPCs-" + formattedDate + ".json";
+
+
+const formattedDate = getFormattedDate()
+const fileName = "NPCs-" + formattedDate + ".json";
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,

@@ -1,9 +1,8 @@
-const raceJSON = require("../config/races.json")
+const raceJSON = require("../config/races.json");
+const randomArrayValue = require("../functions/randomArrayValue");
 function randomRace() {
-  let races = raceJSON.races;
-  const randomIndex = Math.floor(Math.random() * races.length);
-  const randomRace = races[randomIndex];
-  return randomRace;
+  const races = raceJSON.races;
+  return randomArrayValue.randomArrayValue(races);
 }
 module.exports = {
   randomRace,
