@@ -5,6 +5,7 @@ const { randomSex } = require("./functions/randomSexes");
 const { randomOccupation } = require("./functions/randomOccupation");
 const { randomNames } = require("./functions/randomNames");
 const { getFormattedDate } = require('./functions/getFormattedDate')
+const { randomLocation } = require("./functions/randomRegion")
 const readline = require("node:readline");
 const fs = require("fs");
 
@@ -29,12 +30,17 @@ rl.question(`How many NPCs should I generate?: `, (number) => {
     let wholeName = randomNames(String(race.name), String(sex));
     let firstName = wholeName.fistname;
     let lastName = wholeName.lastName;
+    let locatoinJSON = randomLocation()
     let newNPC = new NPC(
       firstName,
       lastName,
       race.name,
       sex,
       age,
+      locatoinJSON.continentName,
+      locatoinJSON.regionName,
+      locatoinJSON.locationName,
+      locatoinJSON.locationURL,
       occupation.category,
       occupation.job
     );
