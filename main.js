@@ -6,12 +6,14 @@ const { randomOccupation } = require("./functions/randomOccupation");
 const { randomNames } = require("./functions/randomNames");
 const { getFormattedDate } = require('./functions/getFormattedDate')
 const { randomLocation } = require("./functions/randomRegion")
+const { randomStats } = require('./functions/randomStats')
 const readline = require("node:readline");
 const fs = require("fs");
+const { randomCurrency } = require("./functions/randomCurrency");
 
 
 const formattedDate = getFormattedDate()
-const fileName = "NPCs-" + formattedDate + ".json";
+const fileName = "./NPCs/NPCs-" + formattedDate + ".json";
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
@@ -31,14 +33,19 @@ rl.question(`How many NPCs should I generate?: `, (number) => {
     let firstName = wholeName.fistname;
     let lastName = wholeName.lastName;
     let locatoinJSON = randomLocation()
+    let statsJSON = randomStats()
+    let currency = randomCurrency()
     let newNPC = new NPC(
       firstName,
       lastName,
       race.name,
       sex,
       age,
+      statsJSON,
+      currency,
       locatoinJSON.continentName,
       locatoinJSON.regionName,
+      locatoinJSON.regionURL,
       locatoinJSON.locationName,
       locatoinJSON.locationURL,
       occupation.category,

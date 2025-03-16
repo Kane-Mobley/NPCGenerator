@@ -13,14 +13,17 @@
  * @param {String} o (Str) Enter Occupation
  * @returns A constructed NPC object
  */
-function NPC(fn, ln, r1, s, a, c, r2, l, lurl, oc, o) {
+function NPC(fn, ln, r1, s, a, st, cur, c, r2, rurl, l, lurl, oc, o) {
   this.firstName = String(fn);
   this.lastName = String(ln);
   this.race = String(r1);
   this.sex = String(s);
   this.age = Number(a);
+  this.stats = st;
+  this.currency = cur;
   this.continent = String(c)
   this.region = String(r2)
+  this.regionURL = String(rurl)
   this.location = String(l)
   this.locationURL = String(lurl)
   this.occupationCategory = String(oc);

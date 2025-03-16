@@ -15,11 +15,12 @@ function randomLocation(){
     const randomRegion = randomArrayValue(continentRegions);
     const regionName = randomRegion.regionName;
     const regionLocations = randomRegion.regionLocations;
+    const regionURL = randomRegion.regionURL
     //location
     const randomLocation = randomArrayValue(regionLocations);
     const locationName = randomLocation.locationName;
     const locationURL = randomLocation.locationURL
-    return {planetName:planetName , continentName:continentName, regionName:regionName, locationName:locationName, locationURL:locationURL}
+    return {planetName:planetName , continentName:continentName, regionName:regionName, regionURL:regionURL,  locationName:locationName, locationURL:locationURL}
 }
 module.exports = {
   randomLocation
