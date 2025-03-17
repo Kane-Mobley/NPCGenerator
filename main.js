@@ -14,6 +14,15 @@ const { randomCurrency } = require("./functions/randomCurrency");
 
 const formattedDate = getFormattedDate()
 const fileName = "./NPCs/NPCs-" + formattedDate + ".json";
+const path = require('path');
+const directoryPath = path.join(__dirname, 'NPCs/foundryNPCs');
+
+if (!fs.existsSync(directoryPath)) {
+  fs.mkdirSync(directoryPath,options={recursive:true});
+  console.log(`Directory '${directoryPath}' created.`);
+} else {
+  console.log(`Directory '${directoryPath}' already exists.`);
+}
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
