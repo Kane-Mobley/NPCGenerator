@@ -9,14 +9,14 @@ const { randomStats } = require("./functions/randomStats");
 const { randomCurrency } = require("./functions/randomCurrency");
 const fs = require("fs");
 const path = require('path');
-const directoryPath = path.join(__dirname, 'NPCs/foundryNPCs');
+// const directoryPath = path.join(__dirname, 'NPCs/foundryNPCs');
 
-if (!fs.existsSync(directoryPath)) {
-  fs.mkdirSync(directoryPath,options={recursive:true});
-  console.log(`Directory '${directoryPath}' created.`);
-} else {
-  console.log(`Directory '${directoryPath}' already exists.`);
-}
+// if (!fs.existsSync(directoryPath)) {
+//   fs.mkdirSync(directoryPath,options={recursive:true});
+//   console.log(`Directory '${directoryPath}' created.`);
+// } else {
+//   console.log(`Directory '${directoryPath}' already exists.`);
+// }
 const readline = require("node:readline");
 const rl = readline.createInterface({
   input: process.stdin,
