@@ -8,9 +8,8 @@ const { randomLocation } = require("./functions/randomRegion");
 const { randomStats } = require("./functions/randomStats");
 const { randomCurrency } = require("./functions/randomCurrency");
 const fs = require("fs");
-const path = require('path');
+const path = require("path");
 // const directoryPath = path.join(__dirname, 'NPCs/foundryNPCs');
-
 // if (!fs.existsSync(directoryPath)) {
 //   fs.mkdirSync(directoryPath,options={recursive:true});
 //   console.log(`Directory '${directoryPath}' created.`);
@@ -22,8 +21,6 @@ const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
-
-
 let i = 0;
 let i2 = 25;
 rl.question(`How many NPCs should I generate?: `, (number) => {
@@ -69,20 +66,19 @@ rl.question(`How many NPCs should I generate?: `, (number) => {
     let foundryTemplateJSON = "";
     if (occupation.category === "CRIME") {
       foundryTemplateJSON = require("./config/npcTemplates/NPC_for_CRIME.json");
-    } 
-    else if (occupation.category === "AGRICULTURE_ANIMAL_HUSBANDRY_FORESTRY") {
+    } else if (
+      occupation.category === "AGRICULTURE_ANIMAL_HUSBANDRY_FORESTRY"
+    ) {
       foundryTemplateJSON = require("./config/npcTemplates/NPC_for_AGRICULTURE_ANIMAL_HUSBANDRY_FORESTRY.json");
-    } 
-    else if (occupation.category === "ARCHITECTURE_CONSTRUCTION") {
+    } else if (occupation.category === "ARCHITECTURE_CONSTRUCTION") {
       foundryTemplateJSON = require("./config/npcTemplates/NPC_for_ARCHITECTURE_CONSTRUCTION.json");
-    } 
-    else if (occupation.category === "THE_ARTS") {
+    } else if (occupation.category === "THE_ARTS") {
       foundryTemplateJSON = require("./config/npcTemplates/NPC_for_THE_ARTS.json");
-    } 
-    else if (occupation.category === "COMMUNICATIONS") {
+    } else if (occupation.category === "COMMUNICATIONS") {
       foundryTemplateJSON = require("./config/npcTemplates/NPC_for_COMMUNICATIONS.json");
-    } 
-    else {foundryTemplateJSON = require("./config/npcTemplates/foundryNPCTemplate.json");}
+    } else {
+      foundryTemplateJSON = require("./config/npcTemplates/foundryNPCTemplate.json");
+    }
     foundryTemplateJSON.name = newNPC.firstName + " " + newNPC.lastName;
     foundryTemplateJSON.prototypeToken.name =
       newNPC.firstName + " " + newNPC.lastName;
@@ -98,11 +94,11 @@ rl.question(`How many NPCs should I generate?: `, (number) => {
     foundryTemplateJSON.system.abilities.wis.value = newNPC.stats.wis;
     foundryTemplateJSON.system.abilities.int.value = newNPC.stats.int;
     foundryTemplateJSON.system.abilities.cha.value = newNPC.stats.char;
-    foundryTemplateJSON.system.currency.pp = newNPC.currency.currency.platinum
-    foundryTemplateJSON.system.currency.gp = newNPC.currency.currency.gold
-    foundryTemplateJSON.system.currency.ep = newNPC.currency.currency.electrum
-    foundryTemplateJSON.system.currency.sp = newNPC.currency.currency.silver
-    foundryTemplateJSON.system.currency.cp = newNPC.currency.currency.copper
+    foundryTemplateJSON.system.currency.pp = newNPC.currency.currency.platinum;
+    foundryTemplateJSON.system.currency.gp = newNPC.currency.currency.gold;
+    foundryTemplateJSON.system.currency.ep = newNPC.currency.currency.electrum;
+    foundryTemplateJSON.system.currency.sp = newNPC.currency.currency.silver;
+    foundryTemplateJSON.system.currency.cp = newNPC.currency.currency.copper;
     console.log(foundryTemplateJSON);
 
     const jsonString = JSON.stringify(foundryTemplateJSON, null, 3);
